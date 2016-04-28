@@ -2,7 +2,7 @@
 
 ## What is accessibility? 
 
-Accessibility in the digital realm can refer to a couple related, but distinct concepts. First, it can refer to how well people with disabilities can access a digital property (in our case, web sites or apps). Second, it can refer to the overall practice or discipline of designing and developing *for* accessibility.
+Accessibility in the digital realm refers to how well people with disabilities can access a digital property (in our case, web sites or apps). It can also refer to the overall practice or discipline of designing and developing *for* accessibility. 
 
 ## How people with disabilities interact with sites/apps?
 
@@ -149,7 +149,7 @@ Many disabled users rely exclusively on the keyboard for navigation. Therefore, 
 2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked with a keyboard
 3. Any other mouse- or touch-based interaction (drop and drop, for example) should have a keyboard alternative
 
-In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question take the user to another page or screen? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled native form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
+In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled native form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
 
 ### Zoomability
 
@@ -304,4 +304,11 @@ Typically, developers should only manipulate focus in response to a user action 
 
 ## Other resources
 
-TODO
+https://www.w3.org/WAI/intro/wcag
+http://webaim.org/
+https://www.marcozehe.de/
+http://www.karlgroves.com/
+http://www.deque.com/blog/
+https://www.paciellogroup.com/blog/
+http://www.weba11y.com/blog/
+https://a11ywins.tumblr.com/
