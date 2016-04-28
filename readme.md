@@ -6,17 +6,15 @@ Accessibility in the digital realm refers to how well people with disabilities c
 
 ## How people with disabilities interact with sites/apps?
 
-Many users with disabilities will take advantage of some sort of assistive technology (or, AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser. 
+Many users with disabilities will take advantage of some sort of assistive technology (AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm of interaction. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser. 
 
 Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult to use (confusing language or videos without captions, for instance). 
 
-Note too that not all AT runs just on a desktop or laptop. Touch-based screen readers are available for tablets and smartphones.
+Note too that AT is not limited to just desktops or laptops. Touch-based screen readers are available for tablets and smartphones.
 
 ## How does accessibility (or lack thereof) impact a disabled user's experience?
 
-In the worst case, poor accessibility can render a site or app totally unusable. Imagine trying to fill out a form with no way to identify the purpose of each field, or trying to navigate by keyboard and getting trapped a single part of the page.
-
-TODO flesh this out
+In the worst case, poor accessibility can render a site or app totally unusable. Critical content may be unreachable, and critical operations unavailable. 
 
 ## What are the relevant standards/guidelines?
 
@@ -26,7 +24,7 @@ WCAG 2.0 is broken into 3 levels - A, AA, and AAA (AAA being the most stringent)
 
 ## How do we comply?
 
-WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessibile digital applications *in general*, the details of meeting those requirements in a specific technology often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs have their own peculiarities, different combinations may produce different results, AT can often be expensive and difficult to learn, etc. 
+WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessibile digital applications *in general*, the details of meeting those requirements in a specific technology often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs can themselves be buggy, different combinations of UA and AT may produce different results, AT can often be expensive and difficult to learn, etc. 
 
 That said, there's a number of things we can do to promote accessibility in our projects:
 
@@ -146,8 +144,8 @@ Images may also be included as CSS backgrounds, and CSS shapes may be used to co
 Many disabled users rely exclusively on the keyboard for navigation. Therefore, any interactions or operations that are available through a mouse or touchscreen should also be available through a keyboard. This has a couple implications for development:
 
 1. Any clickable element also needs to be focusable, so it can be reached with a keyboard
-2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked with a keyboard
-3. Any other mouse- or touch-based interaction (drop and drop, for example) should have a keyboard alternative
+2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked via keyboard
+3. Any other mouse- or touch-based interaction (drag and drop, for example) should have a keyboard alternative
 
 In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled native form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
 
@@ -212,7 +210,7 @@ Note that, typically, elements which are styled with `display: none` or `visibil
 
 #### Identifying required fields
 
-Required fields should be identified using the HTML5 `required` attribute. 
+Required fields should be identified using the HTML5 `required` attribute. This allows AT to identify to the user that the field is required.
 
 ```html
 <label for="field-7">Field 7</label>
@@ -220,6 +218,8 @@ Required fields should be identified using the HTML5 `required` attribute.
 ```
 
 Note that default browser validation/styling may need to be disabled or overridden when using this attribute.
+
+TODO: starring?
 
 #### Grouping
 
@@ -238,7 +238,7 @@ Note that some screen readers are a bit particular about how and when they will 
 
 #### Instructions and other related content
 
-Instructional content may be associated with a form field through its `aria-describedby` attribute. 
+Instructional content may be associated with a form field through its `aria-describedby` attribute. This content then becomes part of the field's accessible description, which AT will make available to the user.
 
 ```html
 <label for="field-9">Field 9</label>
