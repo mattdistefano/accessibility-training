@@ -306,6 +306,24 @@ Typically, developers should only manipulate focus in response to a user action 
 1. When transitioning between screens in a single page application. This can make for a more fluid experience.
 2. When expanding a collapsible content region, focus should be shifted to the region.
 
+## What are some considerations for testing?
+
+### Design validation
+
+Ideally, QA will not need to do a formal validation of the WCAG design requirements. Rather, those requirements should be addressed in the design phase, and QA therefore can be responsible for general design validation.
+
+### Functional testing
+
+Functional testing should be performed on all of the following:
+
+- At least 1 popular screen reader/browser. See [WebAIM's latest survey](http://webaim.org/projects/screenreadersurvey6/) for some suggestions.
+- With keyboard only.
+- At 200% browser zoom.
+
+### Testing with actual users
+
+If available, users with disabilities should be brought in periodically for testing.
+
 ## Other resources
 
 https://www.w3.org/WAI/intro/wcag
