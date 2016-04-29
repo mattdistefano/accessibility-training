@@ -64,7 +64,7 @@ TODO
 
 ### Semantic markup
 
-Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large portion of accessibility issues can be traced back to bad markup choices. Know your tags!
+Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large portion of accessibility issues can be traced back to bad markup choices. In fact, much of this document concerns little more than proper use of HTML. Know your tags!
 
 ### Document structure
 
@@ -92,6 +92,10 @@ Headings should generally appear in order, where each level of heading represent
 #### Landmarks
 
 Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it.
+
+### Hidden content
+
+Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be readable by AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
 
 ### Alternative content
 
@@ -147,7 +151,7 @@ Many disabled users rely exclusively on the keyboard for navigation. Therefore, 
 2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked via keyboard
 3. Any other mouse- or touch-based interaction (drag and drop, for example) should have a keyboard alternative
 
-In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled native form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
+In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
 
 ### Zoomability
 
@@ -306,6 +310,7 @@ Typically, developers should only manipulate focus in response to a user action 
 
 https://www.w3.org/WAI/intro/wcag
 http://webaim.org/
+http://a11yproject.com/
 https://www.marcozehe.de/
 http://www.karlgroves.com/
 http://www.deque.com/blog/
