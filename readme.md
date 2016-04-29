@@ -62,9 +62,11 @@ TODO
 
 ## What are the considerations for development?
 
-### Semantic markup
+### Semantic markup and separation of concerns
 
 Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large portion of accessibility issues can be traced back to bad markup choices. In fact, much of this document concerns little more than proper use of HTML. Know your tags!
+
+Likewise, maintain a separation of content and styling. This doesn't just mean avoiding inline styles - it means choosing tags based on their semantics rather than their default styles. 
 
 ### Document structure
 
@@ -88,6 +90,8 @@ Headings should generally appear in order, where each level of heading represent
             <h4>Level 1.2.2.1</h4>
                 <p>Level 1.2.2.1 content</p>
 ```
+
+This allows AT to navigate an accurate outline of the page's content.
 
 #### Landmarks
 
@@ -252,8 +256,6 @@ Instructional content may be associated with a form field through its `aria-desc
 
 An element can have multiple descriptions - just add additional IDs to its `aria-describedby`. Note that in some UA/ATs, it is necessary to specify a `tabindex` (typically `-1`) on the description elements if multiple descriptions are present.
 
-TODO impact of `title` attribute here.
-
 #### Input types
 
 HTML5 introduced a plethora of new input types for email, dates, telephone numbers, urls, etc. While UA/AT support can be a bit spotty, that's no reason not to take advantage of the additional semantics and behaviors of these new input types. 
@@ -333,5 +335,5 @@ https://www.marcozehe.de/
 http://www.karlgroves.com/
 http://www.deque.com/blog/
 https://www.paciellogroup.com/blog/
-http://www.weba11y.com/blog/
+http://www.weba11y.com/
 https://a11ywins.tumblr.com/
