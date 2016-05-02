@@ -328,12 +328,12 @@ If available, users with disabilities should be brought in periodically for test
 
 ## Other resources
 
-https://www.w3.org/WAI/intro/wcag
-http://webaim.org/
-http://a11yproject.com/
-https://www.marcozehe.de/
-http://www.karlgroves.com/
-http://www.deque.com/blog/
-https://www.paciellogroup.com/blog/
-http://www.weba11y.com/
-https://a11ywins.tumblr.com/
+- https://www.w3.org/WAI/intro/wcag
+- http://webaim.org/
+- http://a11yproject.com/
+- https://www.marcozehe.de/
+- http://www.karlgroves.com/
+- http://www.deque.com/blog/
+- https://www.paciellogroup.com/blog/
+- http://www.weba11y.com/
+- https://a11ywins.tumblr.com/
