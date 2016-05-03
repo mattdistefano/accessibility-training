@@ -2,9 +2,9 @@
 
 ## What is accessibility? 
 
-Accessibility in the digital realm refers to how well people with disabilities can access a digital property (in our case, web sites or apps). It can also refer to the overall practice or discipline of designing and developing *for* accessibility. 
+Accessibility can refer to two distinct, but related concepts. First, it can be an expression of how well people with disabilities are able to utilize (or, _access_) a product or service. Second, it can refer to the practice of designing and developing products and services to be accessible. 
 
-## How people with disabilities interact with sites/apps?
+## How people with disabilities interact with web sites and apps?
 
 Many users with disabilities will take advantage of some sort of assistive technology (AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm of interaction. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser. 
 
@@ -214,7 +214,9 @@ This can be accomplished using the labeling pattern described above, with the la
 <input type="text" name="field-6" aria-labelledby="field-6-label" />
 ```
 
-Note that, typically, elements which are styled with `display: none` or `visibility: hidden` will not be accessible. However, their content *will* be included in *another element's*  accessible name/description when referenced by its `aria-labelledby` or `aria-describedby` attribute (see https://www.paciellogroup.com/blog/2015/05/short-note-on-aria-labelledby-and-aria-describedby/). 
+Note that, typically, elements which are styled with `display: none` or `visibility: hidden` will not be accessible. However, their content *will* be included in *another element's*  accessible name/description when referenced by its `aria-labelledby` or `aria-describedby` attribute (see https://www.paciellogroup.com/blog/2015/05/short-note-on-aria-labelledby-and-aria-describedby/).
+
+Note also that the HTML5 `placeholder` attribute is *not* a label.
 
 #### Identifying required fields
 
