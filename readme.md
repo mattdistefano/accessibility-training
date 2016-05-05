@@ -139,6 +139,10 @@ Note that a text alternative may not be necessary if adjacent text suitably desc
 </a>
 ```
 
+#### Images of text
+
+Avoid placing text within images. Use web fonts instead. 
+
 #### Video
 
 TODO
@@ -264,9 +268,9 @@ HTML5 introduced a plethora of new input types for email, dates, telephone numbe
 
 #### Identifying errors
 
-Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. 
+Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. 
 
-If submission fails on either client- or server-side validation, either a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. 
+If submission fails on either client- or server-side validation, a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. In both cases, AT will respond to the change in focus by announcing the newly-focused element, thereby informing the user of the error state. And in the latter case, by focusing the first form field, we save the user the trouble of having to find the errored field within the form.
 
 ```html
 <!-- before submission -->
@@ -297,7 +301,7 @@ Developers have a couple options for creating custom form controls. As much as p
 
 When navigating with a keyboard, focus determines which element will receive keyboard events (and, consequently, which element the user can interact with). For example, when a link has focus, a keyboard user may follow that link by clicking enter. Focus will be set automatically by the browser as a user tabs through elements, but it may also be set programmatically.
 
-Typically, developers should only manipulate focus in response to a user action that necessitates a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but typing into a text field should not (unless the user is advised of this behavior in advance). 
+Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but typing into a text field should not (unless the user is advised of this behavior in advance). 
 
 #### When is it necessary to manage focus? 
 
