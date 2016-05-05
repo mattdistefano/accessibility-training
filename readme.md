@@ -8,7 +8,7 @@ Accessibility can refer to two distinct, but related concepts. First, it can be 
 
 Many users with disabilities will take advantage of some sort of assistive technology (AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm of interaction. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser. 
 
-Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult to use (confusing language or videos without captions, for instance). 
+Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult to use. 
 
 Note too that AT is not limited to just desktops or laptops. Touch-based screen readers are available for tablets and smartphones.
 
@@ -36,23 +36,27 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 ## What are the considerations for design?
 
-### Font size
-
-TODO
-
 ### Colors and contrast
 
-TODO
+WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. 
+
+Designs should also avoid the use of color _alone_ as a means of conveying information. For example, the error state for a form field may *include* a change in border color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
 
 ### IA and identification
 
-TODO
+IA and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of items should be consistent across all pages.
+
+Headings, labels, and link text should be descriptive (avoid "click here", for example) and avoid repetition. 
 
 ### Content
 
 TODO
 
 ### Text/audio alternatives
+
+TODO
+
+### Animations
 
 TODO
 
