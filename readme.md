@@ -40,17 +40,17 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. 
 
-Designs should also avoid the use of color _alone_ as a means of conveying information. For example, the error state for a form field may *include* a change in border color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
+Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
 
-### IA and identification
+TODO link requirements
 
-IA and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of items should be consistent across all pages.
+### IA and navigation
 
-Headings, labels, and link text should be descriptive (avoid "click here", for example) and avoid repetition. 
+Information architecture and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page.
 
 ### Content
 
-TODO
+Headings, form labels, and link text should be descriptive. A link's purpose should be understandable either from its text alone, or the surrounding text. 
 
 ### Text/audio alternatives
 
@@ -60,7 +60,7 @@ TODO
 
 TODO
 
-### Operation alternatives
+### Operation alternatives and focus states
 
 TODO
 
