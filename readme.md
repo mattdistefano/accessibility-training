@@ -4,11 +4,11 @@
 
 Accessibility can refer to two distinct, but related concepts. First, it can be an expression of how well people with disabilities are able to utilize (or, _access_) a product or service. Second, it can refer to the practice of designing and developing products and services to be accessible. 
 
-## How people with disabilities interact with web sites and apps?
+## How do people with disabilities interact with web sites and apps?
 
 Many users with disabilities will take advantage of some sort of assistive technology (AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm of interaction. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser. 
 
-Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult to use. 
+Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult or impossible to use. 
 
 Note too that AT is not limited to just desktops or laptops. Touch-based screen readers are available for tablets and smartphones.
 
@@ -40,17 +40,21 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. 
 
-Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
+Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
 
 TODO link requirements
 
 ### IA and navigation
 
-Information architecture and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page.
+Information architecture and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively.
 
-### Content
+### Links
 
-Headings, form labels, and link text should be descriptive. A link's purpose should be understandable either from its text alone, or the surrounding text. 
+A link's purpose should be understandable either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing.
+
+### Multi-modality
+
+Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who cannot identify the color or size of a button. 
 
 ### Text/audio alternatives
 
@@ -123,6 +127,8 @@ Many developers are already familiar with the `alt` attribute of the `img` tag; 
 <img alt="information about or equivalent to the image" src="meaningful-image.jpg" />
 ```
 
+Note that CSS background images do not have alternate text, nor are they typically accessible to AT. This makes them ideal for decorative images. However, be careful not to abuse background images by using them for meaningful images without a text alternative.
+
 #### Icon fonts
 
 Icon fonts are a common way to include simple graphics, but they do not use `img` tags. Rather, they typically use CSS to insert their content via pseudo elements. Because they are not `img`s, developers often neglect text alternatives. Additionally, because some screen readers will read pseudo elements, use of icon fonts can cause unpronounceable characters to be spoken. To address these issues, when using icon fonts, developers should place the icon in its own element with the `aria-hidden` attribute set to true, and add a visually-hidden text alternative in a sibling element. 
@@ -153,11 +159,13 @@ TODO
 
 #### Other graphical content (charts, SVGs, CSS shapes)
 
-Images may also be included as CSS backgrounds, and CSS shapes may be used to construct basic graphics like arrows, hamburger menus, etc. In both cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a screen reader would not understand it without additional instruction.
+Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics greated by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction.
+
+TODO more details on how to handle this
 
 ### Keyboard operability
 
-Many disabled users rely exclusively on the keyboard for navigation. Therefore, any interactions or operations that are available through a mouse or touchscreen should also be available through a keyboard. This has a couple implications for development:
+Many users with disabilities rely exclusively on the keyboard for navigation. Therefore, any interactions or operations that are available through a mouse or touchscreen should also be available through a keyboard. This has a couple implications for development:
 
 1. Any clickable element also needs to be focusable, so it can be reached with a keyboard
 2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked via keyboard
