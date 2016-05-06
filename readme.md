@@ -56,6 +56,8 @@ A link's purpose should be understandable either from its text alone, or the sur
 
 Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who cannot identify the color or size of a button. 
 
+Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse or touchscreen. For example, drag-and-drop interactions would be problematic for a user who navigates exclusively through their keyboard. In this case, designers and developers should work together to identify a pattern for keyboard operation.
+
 ### Text/audio alternatives
 
 TODO
@@ -64,7 +66,17 @@ TODO
 
 TODO
 
-### Operation alternatives and focus states
+### Forms
+
+With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label.
+
+TODO
+
+### Focus states
+
+TODO
+
+### Context changes
 
 TODO
 
