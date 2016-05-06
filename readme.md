@@ -359,6 +359,7 @@ If available, users with disabilities should be brought in periodically for test
 ## Other resources
 
 - https://www.w3.org/WAI/intro/wcag
+- https://www.w3.org/TR/wai-aria-practices/#aria_ex
 - http://webaim.org/
 - http://a11yproject.com/
 - https://www.marcozehe.de/
@@ -367,3 +368,4 @@ If available, users with disabilities should be brought in periodically for test
 - https://www.paciellogroup.com/blog/
 - http://www.weba11y.com/
 - https://a11ywins.tumblr.com/
+- https://www.wuhcag.com/wcag-checklist/
