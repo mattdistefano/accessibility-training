@@ -44,19 +44,19 @@ Designs should also avoid the use of color *alone* as a means of conveying infor
 
 TODO link requirements
 
-### IA and navigation
+### IA, navigation, and content
 
 Information architecture and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively.
-
-### Links
 
 A link's purpose should be understandable either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing.
 
 ### Multi-modality
 
-Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who cannot identify the color or size of a button. 
+Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who cannot perceive the size or color of the buttons on the screen.
 
 Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse or touchscreen. For example, drag-and-drop interactions would be problematic for a user who navigates exclusively through their keyboard. In this case, designers and developers should work together to identify a pattern for keyboard operation.
+
+Finally, to support keyboard-only users, any element that is clickable or touchable should be designed with a visible focus state.
 
 ### Text/audio alternatives
 
@@ -69,12 +69,6 @@ TODO
 ### Forms
 
 With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label.
-
-TODO
-
-### Focus states
-
-TODO
 
 ### Context changes
 
@@ -163,7 +157,7 @@ Note that a text alternative may not be necessary if adjacent text suitably desc
 
 #### Images of text
 
-Avoid placing text within images. Use web fonts instead. 
+As much as possible, avoid images of text, and use web fonts instead. 
 
 #### Video
 
@@ -177,11 +171,13 @@ TODO more details on how to handle this
 
 ### Keyboard operability
 
-Many users with disabilities rely exclusively on the keyboard for navigation. Therefore, any interactions or operations that are available through a mouse or touchscreen should also be available through a keyboard. This has a couple implications for development:
+Developers should take a couple steps to provide support for keyboard-only users:
 
-1. Any clickable element also needs to be focusable, so it can be reached with a keyboard
-2. Any clickable element should respond to keyboard events as well as mouse events, so it can be invoked via keyboard
+1. Clickable elements also need to be focusable, so they can be reached with a keyboard
+2. Clickable elements should respond to keyboard events as well as mouse events, so they can be invoked via keyboard
 3. Any other mouse- or touch-based interaction (drag and drop, for example) should have a keyboard alternative
+4. Focus states should be implemented as designed
+5. Additional key commands should be recognized as required for specific UI patterns (see https://www.w3.org/TR/wai-aria-practices/)
 
 In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
 
@@ -325,18 +321,23 @@ Developers have a couple options for creating custom form controls. As much as p
 
 When navigating with a keyboard, focus determines which element will receive keyboard events (and, consequently, which element the user can interact with). For example, when a link has focus, a keyboard user may follow that link by clicking enter. Focus will be set automatically by the browser as a user tabs through elements, but it may also be set programmatically.
 
-Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but typing into a text field should not (unless the user is advised of this behavior in advance). 
+Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but typing into a text field typically *should not*. In both cases, the goal is the same - to keep the experience consistent and predictable. 
 
 #### When is it necessary to manage focus? 
 
 1. When removing or hiding an element that has focus (this includes removing an element whose descendant has focus). If the focused element is removed or hidden, the browser will typically revert focus back to the document or browser window, causing the user to lose their place on the page. If the element in question was added in response to a user action (for example, a dialog), focus should be returned to the element that initiated the action (assuming it is still in the DOM). 
 2. When adding or showing an element that is intended to occlude the rest of the UI. For example, a modal dialog or loading overlay. In this scenario, in addition to shifting focus to the new element or a descendent, event handlers should intercept focus/tab key events to prevent any other elements from receiving focus.
 3. When form submission errors, focus should be moved either to a list of the errors, or the first errored field in the form.
+4. When implementing other specific UI patterns that require it (see https://www.w3.org/TR/wai-aria-practices/).
 
 #### When is it recommended to manage focus?
 
 1. When transitioning between screens in a single page application. This can make for a more fluid experience.
 2. When expanding a collapsible content region, focus should be shifted to the region.
+
+### ARIA roles, states, and properties
+
+TODO
 
 ## What are some considerations for testing?
 
@@ -359,8 +360,10 @@ If available, users with disabilities should be brought in periodically for test
 ## Other resources
 
 - https://www.w3.org/WAI/intro/wcag
-- https://www.w3.org/TR/wai-aria-practices/#aria_ex
+- https://www.w3.org/TR/wai-aria-practices/
+- https://w3c.github.io/aria-in-html/
 - http://webaim.org/
+- http://oaa-accessibility.org/
 - http://a11yproject.com/
 - https://www.marcozehe.de/
 - http://www.karlgroves.com/
@@ -369,3 +372,4 @@ If available, users with disabilities should be brought in periodically for test
 - http://www.weba11y.com/
 - https://a11ywins.tumblr.com/
 - https://www.wuhcag.com/wcag-checklist/
+- http://www.nvaccess.org/
