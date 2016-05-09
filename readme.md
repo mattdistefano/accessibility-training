@@ -46,17 +46,19 @@ TODO link requirements
 
 ### IA, navigation, and content
 
-Information architecture and navigation patterns should be as consistent as possible. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively.
+Information architecture and navigation patterns should be as consistent as possible between pages. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively.
 
-A link's purpose should be understandable either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing.
+Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues.
+
+When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing.
+
+TODO headings, labels, duplication
 
 ### Multi-modality
 
-Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who cannot perceive the size or color of the buttons on the screen.
+Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen.
 
-Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse or touchscreen. For example, drag-and-drop interactions would be problematic for a user who navigates exclusively through their keyboard. In this case, designers and developers should work together to identify a pattern for keyboard operation.
-
-Finally, to support keyboard-only users, any element that is clickable or touchable should be designed with a visible focus state.
+Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions).
 
 ### Text/audio alternatives
 
@@ -70,7 +72,7 @@ TODO
 
 With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label.
 
-### Context changes
+### Context changes and time limits
 
 TODO
 
@@ -360,6 +362,7 @@ If available, users with disabilities should be brought in periodically for test
 ## Other resources
 
 - https://www.w3.org/WAI/intro/wcag
+- https://www.w3.org/WAI/WCAG20/quickref/
 - https://www.w3.org/TR/wai-aria-practices/
 - https://w3c.github.io/aria-in-html/
 - http://webaim.org/
