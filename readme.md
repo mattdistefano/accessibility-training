@@ -58,7 +58,11 @@ Avoid creating content that relies solely on sensory characteristics that all us
 
 Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). (2.1.1, 2.4.7)
 
-### Text/audio alternatives
+### Text alternatives
+
+All meaningful graphical content should have a pure text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, and any other graphical content. (1.1.1)
+
+### Audio and video
 
 TODO
 
