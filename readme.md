@@ -78,9 +78,11 @@ Finally, avoid [types of flashes known to cause seizures](https://www.w3.org/TR/
 
 With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label. (1.1.1, 3.3.2)
 
-When forms will be validated prior to submission, visual indication of any validation failures should be provided, along with descriptive error messages (3.3.1, 3.3.3)
+When forms will be validated prior to submission, visual indication of any validation failures should be provided, along with descriptive error messages. (3.3.1, 3.3.3)
 
 Similar forms should use consistent structure and labeling patterns. For example, if two forms on a site ask for the user's Social Security Number, they should use the same label text and input structure. (3.2.4)
+
+TODO identifying required fields
 
 ### Context changes
 
@@ -90,19 +92,25 @@ Avoid introducing context changes (navigation to a new page, tab, or window, or 
 
 TODO
 
+### External documents (Word, PDF, etc)
+
+TODO
+
 ## What are the considerations for development?
 
 ### Semantic markup and separation of concerns
 
-Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large number of accessibility issues can be traced back to bad markup choices. In fact, much of this document concerns little more than proper use of HTML. Know your tags!
-
-Likewise, maintain a separation of content and styling. This doesn't just mean avoiding inline styles - it means choosing tags based on their semantics rather than their default styles. 
+Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large number of accessibility issues can be traced back to bad markup choices. Know your tags!
 
 ### Document structure
 
+#### Landmarks
+
+Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. (2.4.1)
+
 #### Headings
 
-Headings should generally appear in order, where each level of heading represents a subheading within the previous heading's content.
+Headings should generally appear in order, where each level of heading represents a subheading within the previous heading's content. (1.3.1)
 
 ```html
 <h1>Level 1</h2>
@@ -122,10 +130,6 @@ Headings should generally appear in order, where each level of heading represent
 ```
 
 This allows AT to navigate an accurate outline of the page's content.
-
-#### Landmarks
-
-Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. (2.4.1)
 
 #### Reading order
 
@@ -270,8 +274,6 @@ Required fields should be identified using the HTML5 `required` attribute. This 
 ```
 
 Note that default browser validation/styling may need to be disabled or overridden when using this attribute.
-
-TODO: starring?
 
 #### Grouping
 
