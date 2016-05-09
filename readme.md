@@ -74,6 +74,10 @@ Finally, avoid [types of flashes known to cause seizures](https://www.w3.org/TR/
 
 With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label. (1.1.1, 3.3.2)
 
+When forms will be validated prior to submission, visual indication of any validation failures should be provided, along with descriptive error messages (3.3.1, 3.3.3)
+
+Similar forms should use consistent structure and labeling patterns. For example, if two forms on a site ask for the user's Social Security Number, they should use the same label text and input structure. (3.2.4)
+
 ### Context changes
 
 Avoid introducing context changes (navigation to a new page, tab, or window, or a shift in focus within the page) in unexpected places. For example, navigating to a new page in response to a button or link click is expected, but doing so when a link or button is merely focused is not expected and would produce a very confusing experience for many users. Interacting with a form control *may* produce a context change, but only if the user has been advised of it in advance. For example, a phone number input consisting of three separate fields may auto-advance to the next field when the current field is completed, but instructions advising of this behavior should be included in the page before the form fields. (3.2.1, 3.2.2)
