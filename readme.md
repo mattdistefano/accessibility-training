@@ -90,7 +90,7 @@ TODO
 
 ### Semantic markup and separation of concerns
 
-Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large portion of accessibility issues can be traced back to bad markup choices. In fact, much of this document concerns little more than proper use of HTML. Know your tags!
+Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large number of accessibility issues can be traced back to bad markup choices. In fact, much of this document concerns little more than proper use of HTML. Know your tags!
 
 Likewise, maintain a separation of content and styling. This doesn't just mean avoiding inline styles - it means choosing tags based on their semantics rather than their default styles. 
 
@@ -122,6 +122,10 @@ This allows AT to navigate an accurate outline of the page's content.
 #### Landmarks
 
 Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. (2.4.1)
+
+#### Reading order
+
+Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. (1.3.2)
 
 ### Hidden content
 
@@ -179,8 +183,6 @@ TODO
 
 Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics created by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. (1.1.1)
 
-TODO more details on how to handle this
-
 ### Keyboard operability
 
 Developers should take a couple steps to provide support for keyboard-only users:
@@ -233,7 +235,7 @@ Most browsers also have built-in behavior to translate clicks on a `label` into 
 
 Form fields will sometimes be designed without labels, but this doesn't mean labels are optional; rather, a label needs to be provided in a manner that is both accessible and hidden from view.
 
-This can be accomplished using the labeling pattern described above, with the label text visually-hidden (using for example foundation's `show-for-sr` class, or HTML5 BP's `visuallyhidden` class). It can also be accomplished using an `aria-label` or `aria-labelledby` attribute. 
+This can be accomplished using visually-hidden `label`s in the manner described above, or by using the `aria-label` or `aria-labelledby` attribute. 
 
 ```html
 <label for="field-3" class="visually-hidden">Field 3</label>
@@ -346,6 +348,11 @@ Typically, developers should only manipulate focus in response to a user action 
 
 1. When transitioning between screens in a single page application. This can make for a more fluid experience.
 2. When expanding a collapsible content region, focus should be shifted to the region.
+
+
+### Tab order
+
+Much like the overall order of content within the DOM, tab/focus order should generally follow the visual presentation of the page, so that users can tab through in a natural order. In most cases, this can be accomplished simply by ordering elements properly within the source HTML; explicitly setting a >0 tabindex should be avoided. (2.4.3)
 
 ### ARIA roles, states, and properties
 
