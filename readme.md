@@ -24,7 +24,7 @@ WCAG 2.0 is broken into 3 levels - A, AA, and AAA (AAA being the most stringent)
 
 ## How do we comply?
 
-WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessibile digital applications *in general*, the details of meeting those requirements in a specific technology often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs can themselves be buggy, different combinations of UA and AT may produce different results, AT can often be expensive and difficult to learn, etc. 
+WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessible digital applications *in general*, the details of meeting those requirements in a specific technology often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs can themselves be buggy, different combinations of UA and AT may produce different results, AT can often be expensive and difficult to learn, etc. 
 
 That said, there's a number of things we can do to promote accessibility in our projects:
 
@@ -64,7 +64,7 @@ TODO
 
 ### Animations, moving content, auto-updating content
 
-Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must be pausable, stopable, or hideable by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
+Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must  pausable, stoppable, or hideable by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
 
 Likewise, if content automatically updates, the user should be given an option to stop, pause, hide, or control the frequency of the updates, unless the updates are essential. (2.2.2)
 
@@ -173,7 +173,7 @@ TODO
 
 #### Other graphical content (charts, SVGs, CSS shapes)
 
-Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics greated by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. (1.1.1)
+Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics created by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. (1.1.1)
 
 TODO more details on how to handle this
 
