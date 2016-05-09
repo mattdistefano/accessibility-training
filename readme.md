@@ -44,13 +44,13 @@ Designs should also avoid the use of color *alone* as a means of conveying infor
 
 ### IA, navigation, and content
 
-Information architecture and navigation patterns should be as consistent as possible between pages. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3)
+Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same labels on every page; it should not be labeled 'Search' on one page and 'Find' on another. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
 
 Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
 
 When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. (2.4.4)
 
-Descriptive headings should be used to organize content, and similar heading structures should be used on similar pages. For example, if a site has multiple FAQs, they should follow the same structure. (2.4.6)
+All pages should have a descriptive title and descriptive headings should be used to organize content. (2.4.2, 2.4.6)
 
 ### Multi-modality
 
@@ -62,9 +62,13 @@ Likewise, when designing interactive functionality, be sure to consider users wh
 
 TODO
 
-### Animations
+### Animations, moving content, auto-updating content
 
-TODO
+Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must be pausable, stopable, or hideable by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
+
+Likewise, if content automatically updates, the user should be given an option to stop, pause, hide, or control the frequency of the updates, unless the updates are essential. (2.2.2)
+
+Finally, avoid [types of flashes known to cause seizures](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) (2.3.1).
 
 ### Forms
 
