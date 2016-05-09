@@ -38,27 +38,25 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 ### Colors and contrast
 
-WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. 
+WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. (1.4.3)
 
-Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. 
-
-TODO link requirements
+Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. (1.4.1)
 
 ### IA, navigation, and content
 
-Information architecture and navigation patterns should be as consistent as possible between pages. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively.
+Information architecture and navigation patterns should be as consistent as possible between pages. For example, if a global navigation element exists in the designs, the general order of its links should be consistent across all pages. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3)
 
-Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues.
+Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
 
-When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing.
+When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. (2.4.4)
 
-TODO headings, labels, duplication
+Descriptive headings should be used to organize content, and similar heading structures should be used on similar pages. For example, if a site has multiple FAQs, they should follow the same structure. (2.4.6)
 
 ### Multi-modality
 
-Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen.
+Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen. (1.3.3)
 
-Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions).
+Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). (2.1.1, 2.4.7)
 
 ### Text/audio alternatives
 
@@ -70,9 +68,13 @@ TODO
 
 ### Forms
 
-With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label.
+With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label. (1.1.1, 3.3.2)
 
-### Context changes and time limits
+### Context changes
+
+Avoid introducing context changes (navigation to a new page, tab, or window, or a shift in focus within the page) in unexpected places. For example, navigating to a new page in response to a button or link click is expected, but doing so when a link or button is merely focused is not expected and would produce a very confusing experience for many users. Interacting with a form control *may* produce a context change, but only if the user has been advised of it in advance. For example, a phone number input consisting of three separate fields may auto-advance to the next field when the current field is completed, but instructions advising of this behavior should be included in the page before the form fields. (3.2.1, 3.2.2)
+
+### Time limits and confirmation
 
 TODO
 
@@ -111,7 +113,7 @@ This allows AT to navigate an accurate outline of the page's content.
 
 #### Landmarks
 
-Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it.
+Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. (2.4.1)
 
 ### Hidden content
 
@@ -119,7 +121,7 @@ Throughout the examples in this document, the `visually-hidden` class will be us
 
 ### Alternative content
 
-Since not all users can see the visual presentation of a site or app, it's important to ensure that any meaningful information that is conveyed visually is also conveyed in an accessible, text-based manner. 
+Since not all users can see the visual presentation of a site or app, it's important to ensure that any meaningful information that is conveyed visually is also conveyed in an accessible, text-based manner. (1.1.1)
 
 #### Images
 
@@ -159,7 +161,7 @@ Note that a text alternative may not be necessary if adjacent text suitably desc
 
 #### Images of text
 
-As much as possible, avoid images of text, and use web fonts instead. 
+As much as possible, avoid images of text, and use web fonts instead. (1.4.5)
 
 #### Video
 
@@ -167,7 +169,7 @@ TODO
 
 #### Other graphical content (charts, SVGs, CSS shapes)
 
-Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics greated by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction.
+Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics greated by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. (1.1.1)
 
 TODO more details on how to handle this
 
@@ -181,17 +183,17 @@ Developers should take a couple steps to provide support for keyboard-only users
 4. Focus states should be implemented as designed
 5. Additional key commands should be recognized as required for specific UI patterns (see https://www.w3.org/TR/wai-aria-practices/)
 
-In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. 
+In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. (2.1.1)
 
 ### Zoomability
 
-Users with impaired eyesight may utilize screen magnifiers or browser zoom to enlarge content. These days, most browsers support this without issue, but developers should still spot-check their work at 200% browser zoom.
+Users with impaired eyesight may utilize screen magnifiers or browser zoom to enlarge content. These days, most browsers support this without issue, but developers should still spot-check their work at 200% browser zoom. (1.4.4)
 
 ### Forms
 
 #### Form tags and submit buttons
 
-HTML forms can typically be submitted both explicitly - by clicking the default submit button - or implicitly - by hitting 'enter' within a form field. Most (all?) browsers support both mechanisms, and many users expect both to be available. 
+HTML forms can typically be submitted both explicitly - by clicking the default submit button - or implicitly - by hitting 'enter' within a form field. Most (all?) browsers support both mechanisms, and many users expect both to be available. (3.2.2)
 
 The simplest way to accommodate this expectation is to ensure form fields are always contained within a `form` element, and use the `form`'s `submit` event to trigger any client-side processing (validation, AJAX submissions, etc). This event will fire for both implicit and explicit submission.
 
@@ -201,7 +203,7 @@ Bonus: on mobile Safari (and possibly other mobile browsers), the on-screen keyb
 
 #### Labels
 
-All form fields should have a programatically-associated label. 
+All form fields should have a programatically-associated label. (2.4.6, 3.3.2)
 
 For visible labels, this means using a `label` element, either containing the input in question, or associated with it through the `label`'s `for` attribute.
 
@@ -259,7 +261,7 @@ TODO: starring?
 
 #### Grouping
 
-Related fields should be grouped inside a `fieldset` element, with a `legend` as its first child. This is particularly important for checkbox and radio button lists, which typically include both a prompt (the `legend`) for the group as a whole and labels for each individual item.
+Related fields should be grouped inside a `fieldset` element, with a `legend` as its first child. This is particularly important for checkbox and radio button lists, which typically include both a prompt (the `legend`) for the group as a whole and labels for each individual item. (3.3.2)
 
 ```html
 <fieldset>
@@ -274,7 +276,7 @@ Note that some screen readers are a bit particular about how and when they will 
 
 #### Instructions and other related content
 
-Instructional content may be associated with a form field through its `aria-describedby` attribute. This content then becomes part of the field's accessible description, which AT will make available to the user.
+Instructional content may be associated with a form field through its `aria-describedby` attribute. This content then becomes part of the field's accessible description, which AT will make available to the user. (3.3.2)
 
 ```html
 <label for="field-9">Field 9</label>
@@ -290,9 +292,9 @@ HTML5 introduced a plethora of new input types for email, dates, telephone numbe
 
 #### Identifying errors
 
-Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. 
+Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. (3.3.1)
 
-If submission fails on either client- or server-side validation, a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. In both cases, AT will respond to the change in focus by announcing the newly-focused element, thereby informing the user of the error state. And in the latter case, by focusing the first form field, we save the user the trouble of having to find the errored field within the form.
+If submission fails on either client- or server-side validation, a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. In both cases, AT will respond to the change in focus by announcing the newly-focused element, thereby informing the user of the error state. And in the latter case, by focusing the first form field, we save the user the trouble of having to find the errored field within the form. (3.3.1, 3.3.3)
 
 ```html
 <!-- before submission -->
@@ -323,7 +325,7 @@ Developers have a couple options for creating custom form controls. As much as p
 
 When navigating with a keyboard, focus determines which element will receive keyboard events (and, consequently, which element the user can interact with). For example, when a link has focus, a keyboard user may follow that link by clicking enter. Focus will be set automatically by the browser as a user tabs through elements, but it may also be set programmatically.
 
-Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but typing into a text field typically *should not*. In both cases, the goal is the same - to keep the experience consistent and predictable. 
+Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but focusing or typing into a text field generally *should not*. In both cases, the goal is the same - to keep the experience consistent and predictable. (3.2.1, 3.2.2)
 
 #### When is it necessary to manage focus? 
 
