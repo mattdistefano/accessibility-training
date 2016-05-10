@@ -44,7 +44,7 @@ Avoid the use of color *alone* as a means of conveying information. For example,
 
 ### IA, navigation, and content
 
-Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
+Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another (note however that functionality searching different _parts_ of the site can and potentially should have a different label than the site-wide search). This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
 
 Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
 
@@ -98,11 +98,13 @@ TODO
 
 ## What are the considerations for development?
 
-### Semantic markup
+### Semantic markup and validation
 
-Many users with vision-related disabilities will not be able to engage visually with a page. Instead, they rely on AT to communicate the information contained on the page, and expose useful functionality. AT in turn primarily uses the page's HTML to determine what to communicate, how to communicate it, and what functionality to expose. For example, AT may communicate a heading (`h1`, `h2`, etc) element in a different manner than it would plain text, while also exposing functionality allowing the user to navigate the page by heading. 
+Many users with vision-related disabilities will not be able to engage visually with a page. Instead, they rely on AT to communicate the information contained on the page, and expose useful functionality. AT in turn primarily uses the page's HTML to determine what to communicate, how to communicate it, and what functionality to expose. For example, AT may communicate a heading (`h1`, `h2`, etc) element in a different manner than it would plain text, while also exposing additional heading-specific navigation functionality. 
 
-Developers should therefore be familiar with the meaning of different HTML tags and choose them carefully. Most pages have an identifiable structure, and most UI elements an identifable purpose; the HTML should reflect this organization and meaning so that users of AT receive correct information. Ideally, any information that is conveyed visually through the sequence, relative size, color, font face, or other treatment should also be conveyed through the markup.
+Developers should therefore be familiar with the meaning of different HTML tags and choose them carefully. Most pages have an identifiable structure, and most UI elements an identifable purpose; the HTML should reflect this organization and meaning so that users of AT receive complete and correct information. Ideally, any information that is conveyed visually through the sequence, relative size, color, font face, or other treatment should also be conveyed through the markup.
+
+Additionally, markup should be well-formed and, ideally, validated (per W3C)[https://validator.w3.org/].
 
 #### Common issues
 
