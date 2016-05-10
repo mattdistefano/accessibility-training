@@ -344,7 +344,7 @@ TODO
 
 Developers have a couple options for creating custom form controls. As much as possible, it's recommended to utilize standard HTML5 controls and apply creative styling. The standard checkbox, radio, text, select, etc controls are well-supported by AT, offer a well-understood user experience for disabled users, and often have extensive built-in functionality that would be difficult to replicate. 
 
-That said, if the built-in HTML5 controls are not sufficient, true custom controls may be used, provided they adhere to [ARIA design patterns](https://www.w3.org/TR/wai-aria-practices/#aria_ex).
+That said, if the built-in HTML5 controls are not sufficient, true custom controls may be used, provided they adhere to the [ARIA design patterns](https://www.w3.org/TR/wai-aria-practices/#aria_ex).
 
 ### Focus management
 
@@ -355,7 +355,7 @@ Typically, developers should only manipulate focus in response to a user action 
 #### When is it necessary to manage focus? 
 
 1. When removing or hiding an element that has focus (this includes removing an element whose descendant has focus). If the focused element is removed or hidden, the browser will typically revert focus back to the document or browser window, causing the user to lose their place on the page. If the element in question was added in response to a user action (for example, a dialog), focus should be returned to the element that initiated the action (assuming it is still in the DOM). 
-2. When adding or showing an element that is intended to occlude the rest of the UI. For example, a modal dialog or loading overlay. In this scenario, in addition to shifting focus to the new element or a descendent, event handlers should intercept focus/tab key events to prevent any other elements from receiving focus.
+2. When adding or showing an element that is intended to occlude the rest of the UI. For example, a modal dialog or loading overlay. In this scenario, in addition to shifting focus to the new element or a descendent, event handlers should intercept focus/tab key events to prevent any other elements from receiving focus. 
 3. When form submission errors, focus should be moved either to a list of the errors, or the first errored field in the form.
 4. When implementing other specific UI patterns that require it (see https://www.w3.org/TR/wai-aria-practices/).
 
@@ -364,6 +364,9 @@ Typically, developers should only manipulate focus in response to a user action 
 1. When transitioning between screens in a single page application. This can make for a more fluid experience.
 2. When expanding a collapsible content region, focus should be shifted to the region.
 
+#### What else should we consider when managing focus?
+
+Be sure only to trap focus when absolutely necessary, and when focus is trapped, be sure to provide instructions for how to release it. (2.1.2)
 
 ### Tab order
 
