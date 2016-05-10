@@ -146,13 +146,11 @@ This allows AT to navigate an accurate outline of the page's content.
 
 Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. (1.3.2)
 
+### Hidden content
+
+Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be accessible to AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
+
 ### Alternative content
-
-Since not all users can see the visual presentation of a site or app, it's important to ensure that any meaningful information that is conveyed visually is also conveyed in an accessible, text-based manner. (1.1.1)
-
-#### Hidden content
-
-Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be readable by AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
 
 #### Images
 
