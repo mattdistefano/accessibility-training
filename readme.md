@@ -24,14 +24,14 @@ WCAG 2.0 is broken into 3 levels - A, AA, and AAA (AAA being the most stringent)
 
 ## How do we comply?
 
-WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessible digital applications *in general*, the details of meeting those requirements in a specific technology often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs can themselves be buggy, different combinations of UA and AT may produce different results, AT can often be expensive and difficult to learn, etc. 
+WCAG compliance is a tricky subject. Because WCAG is intended to describe the requirements for accessible digital applications *in general*, the details of meeting those requirements in a specific technology or design often require additional research and experimentation. Likewise, because WCAG often specifies outcomes instead of implementation details, real-world testing is frequently required. This in turn can be challenging, because UAs and ATs can themselves be buggy, different combinations of UA and AT may produce different results, AT can often be expensive and difficult to learn, etc. 
 
 That said, there's a number of things we can do to promote accessibility in our projects:
 
 1. Address accessibility early by including it in the visual and technical design process
 2. Follow best practices and established patterns 
 3. Use automation where viable to test for compliance
-4. Perform basic manual testing during development and QA
+4. Perform manual testing during development and QA
 5. Invite disabled users to participate in testing
 
 ## What are the considerations for design?
@@ -40,11 +40,11 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. (1.4.3)
 
-Designs should also avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. (1.4.1)
+Avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. (1.4.1)
 
 ### IA, navigation, and content
 
-Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same labels on every page; it should not be labeled 'Search' on one page and 'Find' on another. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
+Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
 
 Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
 
@@ -60,7 +60,7 @@ Likewise, when designing interactive functionality, be sure to consider users wh
 
 ### Text alternatives
 
-All meaningful graphical content should have a pure text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, and any other graphical content. (1.1.1)
+All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. (1.1.1)
 
 ### Audio and video
 
@@ -68,7 +68,7 @@ TODO
 
 ### Animations, moving content, auto-updating content
 
-Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must  pausable, stoppable, or hideable by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
+Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must include a mechanism allowing them to be paused, stopped, or hidden by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
 
 Likewise, if content automatically updates, the user should be given an option to stop, pause, hide, or control the frequency of the updates, unless the updates are essential. (2.2.2)
 
@@ -211,9 +211,9 @@ Users with impaired eyesight may utilize screen magnifiers or browser zoom to en
 
 #### Form tags and submit buttons
 
-HTML forms can typically be submitted both explicitly - by clicking the default submit button - or implicitly - by hitting 'enter' within a form field. Most (all?) browsers support both mechanisms, and many users expect both to be available. (3.2.2)
+HTML forms can typically be submitted both explicitly - by clicking the default submit button - or implicitly - by hitting 'enter' within a form field. Most (all?) browsers support both mechanisms, and many users expect both to be available. 
 
-The simplest way to accommodate this expectation is to ensure form fields are always contained within a `form` element, and use the `form`'s `submit` event to trigger any client-side processing (validation, AJAX submissions, etc). This event will fire for both implicit and explicit submission.
+The simplest way to accommodate this expectation is to ensure form fields are always contained within a `form` element, and use the `form`'s `submit` event to trigger any client-side processing (validation, AJAX submissions, etc). This event will fire for both implicit and explicit submission. (3.2.2)
 
 When a submit button is present in the design, it should be coded using a `<input type="submit" value="Label" />` or `<button type="submit">Label</button>`; non submit-type buttons, styled `a` tags with attached click handlers, etc, should not be used.
 
@@ -336,6 +336,8 @@ TODO
 #### Custom controls
 
 Developers have a couple options for creating custom form controls. As much as possible, it's recommended to utilize standard HTML5 controls and apply creative styling. The standard checkbox, radio, text, select, etc controls are well-supported by AT, offer a well-understood user experience for disabled users, and often have extensive built-in functionality that would be difficult to replicate. 
+
+That said, if the built-in HTML5 controls are not sufficient, true custom controls may be used, provided they adhere to [ARIA design patterns](https://www.w3.org/TR/wai-aria-practices/#aria_ex).
 
 ### Focus management
 
