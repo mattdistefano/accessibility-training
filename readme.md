@@ -100,14 +100,18 @@ TODO
 
 ### Semantic markup
 
-Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large number of accessibility issues can be traced back to bad markup choices. Know your tags!
+Many users with vision-related disabilities will not be able to engage visually with a page. Instead, they rely on AT to communicate the information contained on the page, and expose useful functionality. AT in turn primarily uses the page's HTML to determine what to communicate, how to communicate it, and what functionality to expose. For example, AT may communicate a heading (`h1`, `h2`, etc) element in a different manner than it would plain text, while also exposing functionality allowing the user to navigate the page by heading. 
+
+Developers should therefore be familiar with the meaning of different HTML tags and choose them carefully. Most pages have an identifiable structure, and most UI elements an identifable purpose; the HTML should reflect this organization and meaning so that users of AT receive correct information. Ideally, any information that is conveyed visually through the sequence, relative size, color, font face, or other treatment should also be conveyed through the markup.
 
 #### Common issues
 
-- Headings should be marked up with `h1` through `h6` tags; don't just style a div
+- Headings should be marked up with `h1` through `h6` tags; don't just style a `div`
 - `table`s should be used always and only for tabular data; don't use them for layout purposes, and don't create table-like structures from non-`table` elements
 - `ol` and `ul` should be used for ordered and unordered lists, respectively
 - `a` or `button` should be used for navigation and actions within a page
+- `div` and `span` should be used for semantically-neutral elements (for example, as styling or scripting containers)
+- `em`, `strong`, and `i` should be used for emphasized, important, or alternate-voice text
 
 ### Document structure
 
