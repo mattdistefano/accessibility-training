@@ -98,9 +98,16 @@ TODO
 
 ## What are the considerations for development?
 
-### Semantic markup and separation of concerns
+### Semantic markup
 
 Developers should understand the meaning of different tags and choose them carefully. Remember: HTML is a language for adding structure and meaning to content - it's not just about putting that content on the screen. A surprisingly large number of accessibility issues can be traced back to bad markup choices. Know your tags!
+
+#### Common issues
+
+- Headings should be marked up with `h1` through `h6` tags; don't just style a div
+- `table`s should be used always and only for tabular data; don't use them for layout purposes, and don't create table-like structures from non-`table` elements
+- `ol` and `ul` should be used for ordered and unordered lists, respectively
+- `a` or `button` should be used for navigation and actions within a page
 
 ### Document structure
 
@@ -135,13 +142,13 @@ This allows AT to navigate an accurate outline of the page's content.
 
 Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. (1.3.2)
 
-### Hidden content
-
-Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be readable by AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
-
 ### Alternative content
 
 Since not all users can see the visual presentation of a site or app, it's important to ensure that any meaningful information that is conveyed visually is also conveyed in an accessible, text-based manner. (1.1.1)
+
+#### Hidden content
+
+Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be readable by AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
 
 #### Images
 
