@@ -62,17 +62,28 @@ All pages should have a descriptive title and descriptive headings should be use
 
 All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. ([1.1.1](https://www.w3.org/TR/WCAG20/#text-equiv))
 
+### Audio and video
+
+Audio and video files require a variety of alternate content to make them available to users with hearing or vision impairments.
+
+For pre-recorded audio-only content:
+- Provide a text transcript or equivalent text content
+
+For pre-recorded video-only content:
+- Provide a text transcript or equivalent text content
+- Or, provide an audio track containing a spoken equivalent
+
+For (pre-recorded or live) video with an audio track, or other combinations of audio and video:
+- Provide captions
+- Provide an audio track containing descriptions of any visual information missing from the default audio track
+
+([1.2](https://www.w3.org/TR/WCAG20/#media-equiv))
+
 ### Multi-modality
 
 Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen. ([1.3.3](https://www.w3.org/TR/WCAG20/#content-structure-separation))
 
 Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). ([2.1.1](https://www.w3.org/TR/WCAG20/#keyboard-operation), [2.4.7](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
-
-### Audio and video
-
-TODO
-
-([1.2](https://www.w3.org/TR/WCAG20/#media-equiv))
 
 ### Animations, moving content, auto-updating content
 
