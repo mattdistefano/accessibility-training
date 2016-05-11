@@ -67,17 +67,17 @@ All meaningful graphical content should have a text alternative that developers 
 Audio and video files require a variety of alternate content to make them available to users with hearing or vision impairments.
 
 For pre-recorded audio-only content:
-- Provide a text transcript or equivalent text content
+- Provide a text transcript or equivalent text content ([1.2.1](https://www.w3.org/TR/WCAG20/#media-equiv))
 
 For pre-recorded video-only content:
 - Provide a text transcript or equivalent text content
-- Or, provide an audio track containing a spoken equivalent
+- Or, provide an audio track containing a spoken equivalent ([1.2.1](https://www.w3.org/TR/WCAG20/#media-equiv))
 
 For (pre-recorded or live) video with an audio track, or other combinations of audio and video:
-- Provide captions
-- Provide an audio track containing descriptions of any visual information missing from the default audio track
+- Provide captions ([1.2.2](https://www.w3.org/TR/WCAG20/#media-equiv), [1.2.4](https://www.w3.org/TR/WCAG20/#media-equiv))
+- Provide an audio track containing descriptions of any visual information missing from the default audio track ([1.2.3](https://www.w3.org/TR/WCAG20/#media-equiv), [1.2.5](https://www.w3.org/TR/WCAG20/#media-equiv))
 
-([1.2](https://www.w3.org/TR/WCAG20/#media-equiv))
+
 
 ### Multi-modality
 
