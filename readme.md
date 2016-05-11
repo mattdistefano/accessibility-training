@@ -38,65 +38,69 @@ That said, there's a number of things we can do to promote accessibility in our 
 
 ### Colors and contrast
 
-WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. (1.4.3)
+WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 for large text (defined as 14pt - roughly 19px - bold weight, or 18 point - roughly 24px - normal weight). See http://webaim.org/resources/contrastchecker/ for a helpful contrast checker. Choosing high-contrast colors helps keep text readable for users with various vision-related disabilities. ([1.4.3](https://www.w3.org/TR/WCAG20/#visual-audio-contrast))
 
-Avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. (1.4.1)
+Avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. ([1.4.1](https://www.w3.org/TR/WCAG20/#visual-audio-contrast))
 
 ### IA and navigation
 
 Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, primary and secondary navigation elements should appear in the same position on every page, and the relative order of their links should be consistent. Note that this doesn't mean the menus need to be _the same_ on every page - different pages may show different links or sub menus, or the menu items may vary by some other factor (user authentication, for example). 
 
-Likewise, other pieces of content or functionality that are used on multiple pages should be identified and placed consistently within the pages. For example, a component providing site-wide search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. Likewise, it should not appear in the header on one page and the footer on another. (Note that functionality for searching specific _parts_ of the site can and potentially should have a different labels and placement than the site-wide search.) This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
+Likewise, other pieces of content or functionality that are used on multiple pages should be identified and placed consistently within the pages. For example, a component providing site-wide search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. Likewise, it should not appear in the header on one page and the footer on another. (Note that functionality for searching specific _parts_ of the site can and potentially should have a different labels and placement than the site-wide search.) This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. ([3.2.3](https://www.w3.org/TR/WCAG20/#consistent-behavior), [3.2.4](https://www.w3.org/TR/WCAG20/#consistent-behavior))
 
 ### Discoverability
 
-Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
+Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. ([2.4.5](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### Links
 
-When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. (2.4.4)
+When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. ([2.4.4](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
-All pages should have a descriptive title and descriptive headings should be used to organize content. (2.4.2, 2.4.6)
+All pages should have a descriptive title and descriptive headings should be used to organize content. ([2.4.2](https://www.w3.org/TR/WCAG20/#navigation-mechanisms), [2.4.6](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### Graphical content
 
-All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. (1.1.1)
+All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. ([1.1.1](https://www.w3.org/TR/WCAG20/#text-equiv))
 
 ### Multi-modality
 
-Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen. (1.3.3)
+Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen. ([1.3.3](https://www.w3.org/TR/WCAG20/#content-structure-separation))
 
-Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). (2.1.1, 2.4.7)
+Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). ([2.1.1](https://www.w3.org/TR/WCAG20/#keyboard-operation), [2.4.7](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### Audio and video
 
 TODO
 
+([1.2](https://www.w3.org/TR/WCAG20/#media-equiv))
+
 ### Animations, moving content, auto-updating content
 
-Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must include a mechanism allowing them to be paused, stopped, or hidden by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. (2.2.2)
+Any animations that start automatically, are presented alongside other content, and run for more than 5 seconds must include a mechanism allowing them to be paused, stopped, or hidden by the user. An exception can be made when the animation itself is essential to the page. For example, an auto-playing slideshow generally would not be essential, and therefore must be pausable, but a loading spinner does not need to be pausable, as its continued playback is essential to understanding that the page or component is still in a loading state. ([2.2.2](https://www.w3.org/TR/WCAG20/#time-limits))
 
-Likewise, if content automatically updates, the user should be given an option to stop, pause, hide, or control the frequency of the updates, unless the updates are essential. (2.2.2)
+Likewise, if content automatically updates, the user should be given an option to stop, pause, hide, or control the frequency of the updates, unless the updates are essential. ([2.2.2](https://www.w3.org/TR/WCAG20/#time-limits))
 
 Finally, avoid [types of flashes known to cause seizures](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) (2.3.1).
 
 ### Forms
 
-With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label. (1.1.1, 3.3.2)
+With few exceptions, all form fields should have visible labels. Placeholder text may also be used, but should not be used in lieu of a label. ([1.1.1](https://www.w3.org/TR/WCAG20/#text-equiv), [3.3.2](https://www.w3.org/TR/WCAG20/#minimize-error))
 
-When forms will be validated prior to submission, visual indication of any validation failures should be provided, along with descriptive error messages. (3.3.1, 3.3.3)
+When forms will be validated prior to submission, visual indication of any validation failures should be provided, along with descriptive error messages. ([3.3.1](https://www.w3.org/TR/WCAG20/#minimize-error), [3.3.3](https://www.w3.org/TR/WCAG20/#minimize-error))
 
-Similar forms should use consistent structure and labeling patterns. For example, if two forms on a site ask for the user's Social Security Number, they should use the same label text and input structure. (3.2.4)
+Similar forms should use consistent structure and labeling patterns. For example, if two forms on a site ask for the user's Social Security Number, they should use the same label text and input structure. ([3.2.4](https://www.w3.org/TR/WCAG20/#consistent-behavior))
 
 TODO identifying required fields
 
 ### Context changes
 
-Avoid introducing context changes (navigation to a new page, tab, or window, or a shift in focus within the page) in unexpected places. For example, navigating to a new page in response to a button or link click is expected, but doing so when a link or button is merely focused is not expected and would produce a very confusing experience for many users. Interacting with a form control *may* produce a context change, but only if the user has been advised of it in advance. For example, a phone number input consisting of three separate fields may auto-advance to the next field when the current field is completed, but instructions advising of this behavior should be included in the page before the form fields. (3.2.1, 3.2.2)
+Avoid introducing context changes (navigation to a new page, tab, or window, or a shift in focus within the page) in unexpected places. For example, navigating to a new page in response to a button or link click is expected, but doing so when a link or button is merely focused is not expected and would produce a very confusing experience for many users. Interacting with a form control *may* produce a context change, but only if the user has been advised of it in advance. For example, a phone number input consisting of three separate fields may auto-advance to the next field when the current field is completed, but instructions advising of this behavior should be included in the page before the form fields. ([3.2.1](https://www.w3.org/TR/WCAG20/#consistent-behavior), [3.2.2](https://www.w3.org/TR/WCAG20/#consistent-behavior))
 
 ### Time limits and confirmation
 
 TODO
+
+https://www.w3.org/TR/WCAG20/#time-limits
 
 ### External documents (Word, PDF, etc)
 
@@ -110,7 +114,7 @@ Many users with vision-related disabilities will not be able to engage visually 
 
 Developers should therefore be familiar with the meaning of different HTML tags and choose them carefully. Most pages have an identifiable structure, and most UI elements an identifable purpose; the HTML should reflect this organization and meaning so that users of AT receive complete and correct information. Ideally, any information that is conveyed visually through the sequence, relative size, color, font face, or other treatment should also be conveyed through the markup.
 
-Additionally, markup should be well-formed and, ideally, validated (per W3C)[https://validator.w3.org/].
+Additionally, markup should be well-formed and, ideally, validated [per W3C](https://validator.w3.org/) ([4.1.1](https://www.w3.org/TR/WCAG20/#ensure-compat)).
 
 #### Common issues
 
@@ -125,11 +129,11 @@ Additionally, markup should be well-formed and, ideally, validated (per W3C)[htt
 
 #### Landmarks
 
-Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. (2.4.1)
+Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. ([2.4.1](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 #### Headings
 
-Headings should generally appear in order, where each level of heading represents a subheading within the previous heading's content. (1.3.1)
+Headings should generally appear in order, where each level of heading represents a subheading within the previous heading's content. ([1.3.1](https://www.w3.org/TR/WCAG20/#content-structure-separation))
 
 ```html
 <h1>Level 1</h2>
@@ -152,7 +156,7 @@ This allows AT to navigate an accurate outline of the page's content.
 
 #### Reading order
 
-Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. (1.3.2)
+Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. ([1.3.2](https://www.w3.org/TR/WCAG20/#content-structure-separation))
 
 ### Hidden content
 
@@ -198,7 +202,7 @@ Note that a text alternative may not be necessary if adjacent text suitably desc
 
 #### Images of text
 
-As much as possible, avoid images of text, and use web fonts instead. (1.4.5)
+As much as possible, avoid images of text, and use web fonts instead. ([1.4.5](https://www.w3.org/TR/WCAG20/#visual-audio-contrast))
 
 #### Video
 
@@ -206,7 +210,7 @@ TODO
 
 #### Other graphical content (charts, SVGs, CSS shapes)
 
-Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics created by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. (1.1.1)
+Graphical content may also be included via HTML canvas elements, inline SVGs, and CSS shapes (basic graphics created by clever composition of CSS rules -  for example, arrows or hamburger menus). In all cases, developers should ask themselves whether the visual content adds meaning that a non-sighted user would benefit from. For example, a hamburger menu constructed using pure CSS may be recognizable to a sighted user, but a user of a screen reader would not be able to identify it without additional instruction. ([1.1.1](https://www.w3.org/TR/WCAG20/#text-equiv))
 
 ### Keyboard operability
 
@@ -216,13 +220,13 @@ Developers should take a couple steps to provide support for keyboard-only users
 2. Clickable elements should respond to keyboard events as well as mouse events, so they can be invoked via keyboard
 3. Any other mouse- or touch-based interaction (drag and drop, for example) should have a keyboard alternative
 4. Focus states should be implemented as designed
-5. Additional key commands should be recognized as required for specific UI patterns (see https://www.w3.org/TR/wai-aria-practices/)
+5. Additional key commands should be recognized [as required for specific UI patterns](https://www.w3.org/TR/wai-aria-practices/)
 
-In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. (2.1.1)
+In many cases, the first two requirements can be addressed via semantic markup. Does clicking the element in question trigger some sort of navigation? Use an `a` tag. Does it invoke an action on the same page? Use a `button` tag. Is the element a custom form control? Try using styled built-in form controls (see below for more info). Because these are all standard HTML elements, browsers will provide robust built-in keyboard support. ([2.1.1](https://www.w3.org/TR/WCAG20/#keyboard-operation), [4.1.2](https://www.w3.org/TR/WCAG20/#ensure-compat))
 
 ### Zoomability
 
-Users with impaired eyesight may utilize screen magnifiers or browser zoom to enlarge content. These days, most browsers support this without issue, but developers should still spot-check their work at 200% browser zoom. (1.4.4)
+Users with impaired eyesight may utilize screen magnifiers or browser zoom to enlarge content. These days, most browsers support this without issue, but developers should still spot-check their work at 200% browser zoom. ([1.4.4](https://www.w3.org/TR/WCAG20/#visual-audio-contrast))
 
 ### Forms
 
@@ -230,7 +234,7 @@ Users with impaired eyesight may utilize screen magnifiers or browser zoom to en
 
 HTML forms can typically be submitted both explicitly - by clicking the default submit button - or implicitly - by hitting 'enter' within a form field. Most (all?) browsers support both mechanisms, and many users expect both to be available. 
 
-The simplest way to accommodate this expectation is to ensure form fields are always contained within a `form` element, and use the `form`'s `submit` event to trigger any client-side processing (validation, AJAX submissions, etc). This event will fire for both implicit and explicit submission. (3.2.2)
+The simplest way to accommodate this expectation is to ensure form fields are always contained within a `form` element, and use the `form`'s `submit` event to trigger any client-side processing (validation, AJAX submissions, etc). This event will fire for both implicit and explicit submission. ([3.2.2](https://www.w3.org/TR/WCAG20/#consistent-behavior))
 
 When a submit button is present in the design, it should be coded using a `<input type="submit" value="Label" />` or `<button type="submit">Label</button>`; non submit-type buttons, styled `a` tags with attached click handlers, etc, should not be used.
 
@@ -238,7 +242,7 @@ Bonus: on mobile Safari (and possibly other mobile browsers), the on-screen keyb
 
 #### Labels
 
-All form fields should have a programatically-associated label. (2.4.6, 3.3.2)
+All form fields should have a programatically-associated label. ([2.4.6](https://www.w3.org/TR/WCAG20/#navigation-mechanisms), [3.3.2](https://www.w3.org/TR/WCAG20/#minimize-error))
 
 For visible labels, this means using a `label` element, either containing the input in question, or associated with it through the `label`'s `for` attribute.
 
@@ -294,7 +298,7 @@ Note that default browser validation/styling may need to be disabled or overridd
 
 #### Grouping
 
-Related fields should be grouped inside a `fieldset` element, with a `legend` as its first child. This is particularly important for checkbox and radio button lists, which typically include both a prompt (the `legend`) for the group as a whole and labels for each individual item. (3.3.2)
+Related fields should be grouped inside a `fieldset` element, with a `legend` as its first child. This is particularly important for checkbox and radio button lists, which typically include both a prompt (the `legend`) for the group as a whole and labels for each individual item. ([3.3.2](https://www.w3.org/TR/WCAG20/#minimize-error))
 
 ```html
 <fieldset>
@@ -309,7 +313,7 @@ Note that some screen readers are a bit particular about how and when they will 
 
 #### Instructions and other related content
 
-Instructional content may be associated with a form field through its `aria-describedby` attribute. This content then becomes part of the field's accessible description, which AT will make available to the user. (3.3.2)
+Instructional content may be associated with a form field through its `aria-describedby` attribute. This content then becomes part of the field's accessible description, which AT will make available to the user. ([3.3.2](https://www.w3.org/TR/WCAG20/#minimize-error))
 
 ```html
 <label for="field-9">Field 9</label>
@@ -325,9 +329,9 @@ HTML5 introduced a plethora of new input types for email, dates, telephone numbe
 
 #### Identifying errors
 
-Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. (3.3.1)
+Invalid form fields should have the `aria-invalid` attribute set to `true` *after the field has been interacted with or the form has been submitted*. A description of the error or how to fix it (if known) should either be contained within the field's label, or be associated with the input via its `aria-describedby` attribute. ([3.3.1](https://www.w3.org/TR/WCAG20/#minimize-error))
 
-If submission fails on either client- or server-side validation, a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. In both cases, AT will respond to the change in focus by announcing the newly-focused element, thereby informing the user of the error state. And in the latter case, by focusing the first form field, we save the user the trouble of having to find the errored field within the form. (3.3.1, 3.3.3)
+If submission fails on either client- or server-side validation, a list of errors should be presented and focused, or focus should be shifted to the first invalid field in the form. In both cases, AT will respond to the change in focus by announcing the newly-focused element, thereby informing the user of the error state. And in the latter case, by focusing the first form field, we save the user the trouble of having to find the errored field within the form. ([3.3.1](https://www.w3.org/TR/WCAG20/#minimize-error), [3.3.3](https://www.w3.org/TR/WCAG20/#minimize-error))
 
 ```html
 <!-- before submission -->
@@ -354,20 +358,20 @@ TODO
 
 Developers have a couple options for creating custom form controls. As much as possible, it's recommended to utilize standard HTML5 controls and apply creative styling. The standard checkbox, radio, text, select, etc controls are well-supported by AT, offer a well-understood user experience for disabled users, and often have extensive built-in functionality that would be difficult to replicate. 
 
-That said, if the built-in HTML5 controls are not sufficient, true custom controls may be used, provided they adhere to the [ARIA design patterns](https://www.w3.org/TR/wai-aria-practices/#aria_ex).
+That said, if the built-in HTML5 controls are not sufficient, true custom controls may be used, provided they adhere to the [ARIA design patterns](https://www.w3.org/TR/wai-aria-practices/#aria_ex) ([4.1.2](https://www.w3.org/TR/WCAG20/#ensure-compat)).
 
 ### Focus management
 
 When navigating with a keyboard, focus determines which element will receive keyboard events (and, consequently, which element the user can interact with). For example, when a link has focus, a keyboard user may follow that link by clicking enter. Focus will be set automatically by the browser as a user tabs through elements, but it may also be set programmatically.
 
-Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but focusing or typing into a text field generally *should not*. In both cases, the goal is the same - to keep the experience consistent and predictable. (3.2.1, 3.2.2)
+Typically, developers should only manipulate focus in response to a user action that *requires* a change in focus. For example, clicking a button to open a dialog *should* result in a change in focus, but focusing or typing into a text field generally *should not*. In both cases, the goal is the same - to keep the experience consistent and predictable. ([3.2.1](https://www.w3.org/TR/WCAG20/#consistent-behavior), [3.2.2](https://www.w3.org/TR/WCAG20/#consistent-behavior))
 
 #### When is it necessary to manage focus? 
 
 1. When removing or hiding an element that has focus (this includes removing an element whose descendant has focus). If the focused element is removed or hidden, the browser will typically revert focus back to the document or browser window, causing the user to lose their place on the page. If the element in question was added in response to a user action (for example, a dialog), focus should be returned to the element that initiated the action (assuming it is still in the DOM). 
 2. When adding or showing an element that is intended to occlude the rest of the UI. For example, a modal dialog or loading overlay. In this scenario, in addition to shifting focus to the new element or a descendent, event handlers should intercept focus/tab key events to prevent any other elements from receiving focus. 
 3. When form submission errors, focus should be moved either to a list of the errors, or the first errored field in the form.
-4. When implementing other specific UI patterns that require it (see https://www.w3.org/TR/wai-aria-practices/).
+4. When implementing [other specific UI patterns that require it](https://www.w3.org/TR/wai-aria-practices/).
 
 #### When is it recommended to manage focus?
 
@@ -376,11 +380,11 @@ Typically, developers should only manipulate focus in response to a user action 
 
 #### What else should we consider when managing focus?
 
-Be sure only to trap focus when absolutely necessary, and when focus is trapped, be sure to provide instructions for how to release it. (2.1.2)
+Be sure only to trap focus when absolutely necessary, and when focus is trapped, be sure to provide instructions for how to release it. ([2.1.2](https://www.w3.org/TR/WCAG20/#keyboard-operation))
 
 ### Tab order
 
-Much like the overall order of content within the DOM, tab/focus order should generally follow the visual presentation of the page, so that users can tab through in a natural order. In most cases, this can be accomplished simply by ordering elements properly within the source HTML; explicitly setting a >0 tabindex should be avoided. (2.4.3)
+Much like the overall order of content within the DOM, tab/focus order should generally follow the visual presentation of the page, so that users can tab through in a natural order. In most cases, this can be accomplished simply by ordering elements properly within the source HTML; explicitly setting a >0 tabindex should be avoided. ([2.4.3](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### ARIA roles, states, and properties
 
