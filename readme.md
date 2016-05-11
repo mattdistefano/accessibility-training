@@ -8,7 +8,7 @@ Accessibility can refer to two distinct, but related concepts. First, it can be 
 
 Many users with disabilities will take advantage of some sort of assistive technology (AT). AT augments, adjusts, or even entirely replaces the screen/mouse paradigm of interaction. For example, a blind user may utilize a screen reader, which provides a spoken representation of the screen; a user with impaired motor skills might navigate via keyboard rather than mouse; a user with poor eyesight may zoom their browser or use another screen magnifier.
 
-Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult or impossible to use. 
+Note that not all disabilities require the use of AT. A user who is deaf or color-blind or cognitively-impaired may just browse with monitor and mouse, but still encounter content that is difficult or impossible to use. Likewise, most of us will encounter at least minor vision and motor-skill impairment as we age.
 
 Note too that AT is not limited to just desktops or laptops. Touch-based screen readers are available for tablets and smartphones.
 
@@ -42,25 +42,31 @@ WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 f
 
 Avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. (1.4.1)
 
-### IA, navigation, and content
+### IA and navigation
 
-Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, when navigation elements are present on multiple pages, they should appear in the same position within each page, and the relative order of their links should not vary between pages. Likewise, other pieces of content or functionality that are used on multiple pages should be identified consistently. For example, a component providing global search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another (note however that functionality searching different _parts_ of the site can and potentially should have a different label than the site-wide search). This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
+Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, primary and secondary navigation elements should appear in the same position on every page, and the relative order of their links should be consistent. Note that this doesn't mean the menus need to be _the same_ on every page - different pages may show different links or sub menus, or the menu items may vary by some other factor (user authentication, for example). 
+
+Likewise, other pieces of content or functionality that are used on multiple pages should be identified and placed consistently within the pages. For example, a component providing site-wide search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. Likewise, it should not appear in the header on one page and the footer on another. (Note that functionality for searching specific _parts_ of the site can and potentially should have a different labels and placement than the site-wide search.) This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. (3.2.3, 3.2.4)
+
+### Discoverability
 
 Pages should typically also be discoverable through at least two ways (navigation, links within pages, search, site map, etc). This gives users with disabilities the option to use whichever mechanism works best for them, and ensures a fallback is available in case they encounter issues. Note that this is not required for pages like a checkout or confirmation screen that represent a step within a process. (2.4.5)
+
+### Links
 
 When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. (2.4.4)
 
 All pages should have a descriptive title and descriptive headings should be used to organize content. (2.4.2, 2.4.6)
+
+### Graphical content
+
+All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. (1.1.1)
 
 ### Multi-modality
 
 Avoid creating content that relies solely on sensory characteristics that all users might not be able to perceive. For example, instructions to "click the big red button" are not useful to a blind user who can't see the size or color of the buttons on the screen. (1.3.3)
 
 Likewise, when designing interactive functionality, be sure to consider users who cannot operate a mouse. Always include focus states for any clickable element, avoid interfaces that depend entirely on mouse hover, and identify an alternate means of operation for functionality like drag-and-drop (designers and developers may need to collaborate on these sort of interactions). (2.1.1, 2.4.7)
-
-### Text alternatives
-
-All meaningful graphical content should have a text alternative that developers can incorporate into the final product. Note that this includes not just bitmap images and photos, but also icons, charts, graphs, some animations, and potentially other graphical content. (1.1.1)
 
 ### Audio and video
 
