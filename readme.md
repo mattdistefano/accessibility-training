@@ -18,7 +18,7 @@ In the worst case, poor accessibility can render a site or app totally unusable.
 
 ## What are the relevant standards/guidelines?
 
-WCAG 2.0 is the most widely-recognized guideline for digital accessibility. While it is not currently required by law, courts have identified it as a benchmark for accessibility in lawsuits brought under ADA, and it is likely to be the basis for future legislation. 
+[WCAG 2.0](https://www.w3.org/TR/WCAG20/) is the most widely-recognized guideline for digital accessibility. While it is not currently broadly required by law, both courts and various government agencies have identified it as a benchmark for accessibility in lawsuits brought under ADA, and it is likely to be the basis for future legislation. 
 
 WCAG 2.0 is broken into 3 levels - A, AA, and AAA (AAA being the most stringent). We currently try to comply with AA.
 
@@ -32,7 +32,7 @@ That said, there's a number of things we can do to promote accessibility in our 
 2. Follow best practices and established patterns 
 3. Use automation where viable to test for compliance
 4. Perform manual testing during development and QA
-5. Invite disabled users to participate in testing
+5. Invite disabled users to participate in QA and usability testing
 
 ## What are the considerations for design?
 
@@ -76,8 +76,6 @@ For pre-recorded video-only content:
 For (pre-recorded or live) video with an audio track, or other combinations of audio and video:
 - Provide captions ([1.2.2](https://www.w3.org/TR/WCAG20/#media-equiv), [1.2.4](https://www.w3.org/TR/WCAG20/#media-equiv))
 - Provide an audio track containing descriptions of any visual information missing from the default audio track ([1.2.3](https://www.w3.org/TR/WCAG20/#media-equiv), [1.2.5](https://www.w3.org/TR/WCAG20/#media-equiv))
-
-
 
 ### Multi-modality
 
