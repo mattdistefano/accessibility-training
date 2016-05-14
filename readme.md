@@ -138,7 +138,7 @@ Additionally, markup should be well-formed and, ideally, validated [per W3C](htt
 
 #### Landmarks
 
-Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. ([2.4.1](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
+Use specific tags and/or the `role` attribute to identify landmarks within a document. For example, the main content area should be marked up with a `main` tag so that supporting AT can skip directly to it. TODO skip links  ([2.4.1](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 #### Headings
 
@@ -168,6 +168,8 @@ This allows AT to navigate an accurate outline of the page's content.
 Since AT typically reads elements in the order in which they appear in the DOM, content in the source HTML should typically have a sensible reading order that parallels how it will be presented on screen. So, for example, while it's possible to put a section heading *beneath* its content in the DOM, but visually position it *above* that same content via CSS - don't. ([1.3.2](https://www.w3.org/TR/WCAG20/#content-structure-separation))
 
 ### Hidden content
+
+TODO hiding from AT.
 
 Throughout the examples in this document, the `visually-hidden` class will be used. This does not necessarily represent a _specific_ class, but is intended to represent the general concept of a style that hides content from the visual presentation while keeping it available to AT. In most cases, content that is styled with `display: none` or `visibility: hidden` will not be accessible to AT. Often, this is what we want, but sometimes we want to keep content accessible, while still hiding it on the screen. In these cases, a `visually-hidden` style is appropriate. 
 
@@ -296,7 +298,7 @@ Note also that the HTML5 `placeholder` attribute is *not* a label.
 
 #### Identifying required fields
 
-Required fields should be identified using the HTML5 `required` attribute. This allows AT to identify to the user that the field is required.
+Required fields should be identified using the HTML5 `required` attribute. This allows AT to identify to the user that the field is required. ([3.3.3](https://www.w3.org/TR/WCAG20/#minimize-error))
 
 ```html
 <label for="field-7">Field 7</label>
