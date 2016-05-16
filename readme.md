@@ -42,11 +42,13 @@ WCAG requires a minimum contrast ratio of 4.5:1 for normal-sized text, and 3:1 f
 
 Avoid the use of color *alone* as a means of conveying information. For example, the error state for a form field may *include* a change in border or label color, but if that is the sole visual indicator, a color-blind user would be unable to perceive the error. Links should either have a non-color-based visual cue (underlining or bolding, for example) in their normal state, or use a color that provides 3:1 contrast against the surrounding text, and have a non-color-based visual cue in their hover/focus state. ([1.4.1](https://www.w3.org/TR/WCAG20/#visual-audio-contrast))
 
-### IA and navigation
+### IA, navigation, and content
 
-Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, primary and secondary navigation elements should appear in the same position on every page, and the relative order of their links should be consistent. Note that this doesn't mean the menus need to be _the same_ on every page - different pages may show different links or sub menus, or the menu items may vary by some other factor (user authentication, for example). 
+Information architecture and navigation should use consistent, predictable patterns as much as possible. For example, primary and secondary navigation elements should appear in the same position on every page, and the relative order of their links should be consistent. Note that this doesn't mean the links need to be _the same_ on every page - different pages may show different links or sub menus, or the menu items may vary by some other factor (user authentication, for example). 
 
-Likewise, other pieces of content or functionality that are used on multiple pages should be identified and placed consistently within the pages. For example, a component providing site-wide search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. Likewise, it should not appear in the header on one page and the footer on another. (Note that functionality for searching specific _parts_ of the site can and potentially should have a different labels and placement than the site-wide search.) This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. ([3.2.3](https://www.w3.org/TR/WCAG20/#consistent-behavior), [3.2.4](https://www.w3.org/TR/WCAG20/#consistent-behavior))
+Other pieces of content or functionality that are used on multiple pages should also be identified and placed consistently within the pages. For example, a component providing site-wide search functionality should use the same label on every page; it should not be labeled 'Search' on one page and 'Find' on another. Likewise, it should not appear in the header on one page and the footer on another. (Note that functionality for searching specific _parts_ of the site can and potentially should have a different labels and placement than the site-wide search.) This predictability is beneficial to all users, but particularly to users of AT, who otherwise would have to spend time learning the structure of each new page before they could use it effectively. ([3.2.3](https://www.w3.org/TR/WCAG20/#consistent-behavior), [3.2.4](https://www.w3.org/TR/WCAG20/#consistent-behavior))
+
+All pages should have a descriptive title and descriptive headings should be used to organize content. ([2.4.2](https://www.w3.org/TR/WCAG20/#navigation-mechanisms), [2.4.6](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### Discoverability
 
@@ -55,8 +57,6 @@ Pages should typically also be discoverable through at least two ways (navigatio
 ### Links
 
 When linking, be sure the purpose of the link is clear either from its text alone, or the surrounding text. Try to avoid link text like "click here", having multiple links to the same destination with different text, or multiple links to different destinations with the same text, as these can all be confusing. ([2.4.4](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
-
-All pages should have a descriptive title and descriptive headings should be used to organize content. ([2.4.2](https://www.w3.org/TR/WCAG20/#navigation-mechanisms), [2.4.6](https://www.w3.org/TR/WCAG20/#navigation-mechanisms))
 
 ### Graphical content
 
