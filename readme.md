@@ -436,3 +436,5 @@ If available, users with disabilities should be brought in periodically for test
 - https://a11ywins.tumblr.com/
 - https://www.wuhcag.com/wcag-checklist/
 - http://www.nvaccess.org/
+- http://www.ssbbartgroup.com/blog/
+- http://alastairc.ac
